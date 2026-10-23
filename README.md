@@ -162,8 +162,6 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-Development server: **http://127.0.0.1:8000/**
-
 > **Compatibility note:** The dependency list contains potentially conflicting duplicate version pins (notably `langchain`) and a mix of platform-specific packages. If installation fails, resolve the requirements and test a compatible Python version before treating the environment as reproducible.
 
 ### Option 2 — Docker Compose
@@ -179,7 +177,7 @@ cp .env.example .env
 docker compose up --build
 ```
 
-The Compose web service publishes port **8000**. The included development command uses Django's `runserver`; change that to a production server for deployment. **Do not use the sample database passwords or insecure service defaults in production.**
+The Compose web service publishes port **8000**. The included development command uses Django's `runserver`.
 
 ### Basic checks
 
@@ -209,8 +207,6 @@ The following routes are **documented in the repository**. Check `financial/urls
 | `GET` | `/api/ai/recommendations/` | Retrieve recommendations |
 | `POST` | `/api/ai/analyze/` | Request analysis |
 | `GET`, `POST` | `/api/data/exports/` | List/create exports |
-
-For more request and response examples, see **[API_DOCUMENTATION.md](./API_DOCUMENTATION.md)**.
 
 ### Authentication example
 
